@@ -1,7 +1,13 @@
 title: "Rijkshuisstijl interpretatie "
 body:
   - type: textarea
+    id: what-happened
+    validations:
+      required: true
     attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
       value: |
         # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
         _Laatste update: {datum, zoals: 14-4-2025}_  
