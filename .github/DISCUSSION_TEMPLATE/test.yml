@@ -1,36 +1,113 @@
-title: Rijkshuisstijl keuze
-labels:
-  - rijkshuisstijl
+title: "Rijkshuisstijl interpretatie "
 body:
-  - type: input
-    id: component_naam
+  - type: textarea
+    id: keuzes-en-overwegingen
     attributes:
-      label: Naam van onderdeel
-      description: Geef aan voor welk component of onderdeel deze keuzes gelden
-      placeholder: Bijv. Button, Inputveld, etc.
+      label: "Naam onderdeel"
+      description: "Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes"
+      value: |
+        # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
+        _Laatste update: {datum, zoals: 14-4-2025}_
 
   - type: textarea
-    id: keuzes_en_overwegingen
+    id: keuzes-en-overwegingen
     attributes:
-      label: Keuzes en overwegingen
-      description: Noteer hier ontwerpkeuzes, motivatie en onderbouwing (zoals WCAG, onderzoek, huisstijl).
-      placeholder: |
-        Voorbeeld:
-        **Kleurgebruik:** Donkerblauw (#003082) voor primaire knoppen. Dit voldoet aan contrastvereisten (WCAG AA).
-
-  - type: markdown
-    attributes:
+      label: "Keuzes en overwegingen"
+      description: |
+        Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
+        Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt.
       value: |
-        ---
-        ## 📄 Voorvertoning
+        ## Keuzes en overwegingen
 
-        Gebruik onderstaande preview als Markdown in documentatie of overdracht:
+        <!---
+        Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
+        Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt.
+        -->
 
-        ```markdown
-        ## {{component_naam}} – Rijkshuisstijl keuzes
-        Laatste update: {{date}}
+  - type: textarea
+    id: kleurgebruik
+    attributes:
+      label: "Kleurgebruik"
+      description: Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast?
+      value: |
+        ### Kleurgebruik
+        <!-- Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast? -->
 
-        ### Keuzes en overwegingen
+  - type: textarea
+    id: typografie
+    attributes:
+      label: "Typografie"
+      description: Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar?
+      value: |
+        ### Typografie
+        <!-- Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar? -->
 
-        {{keuzes_en_overwegingen}}
-        ```
+  - type: textarea
+    id: toegankelijkheid
+    attributes:
+      label: "Toegankelijkheid"
+      description: Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden?
+      value: |
+        ### Toegankelijkheid
+        <!-- Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden? -->
+
+  - type: textarea
+    id: interactie-gedrag
+    attributes:
+      label: "Interactie/gedrag"
+      description: Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl?
+      value: |
+        ### Interactie/gedrag
+        <!-- Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl? -->
+
+  - type: textarea
+    id: afgeronde-hoeken
+    attributes:
+      label: "Afgeronde hoeken"
+      description: Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid?
+      value: |
+        ### Afgeronde hoeken
+        <!-- Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid? -->
+
+  - type: textarea
+    id: uitlijning-en-spacing
+    attributes:
+      label: "Uitlijning en spacing"
+      description: Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt?
+      value: |
+        ### Uitlijning en spacing
+        <!-- Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt? -->
+
+  - type: textarea
+    id: overige-onderwerpen
+    attributes:
+      label: "Overige onderwerpen"
+      description: "Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc."
+      value: |
+        <!---
+        Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc.
+        -->
+
+  - type: textarea
+    id: vragen-of-discussiepunten
+    attributes:
+      label: "Vragen of discussiepunten"
+      value: |
+        ## Vragen of discussiepunten
+
+        - [Bijvoorbeeld: Wat zijn ervaringen bij andere organisaties met deze component?]
+        - [Bijvoorbeeld: Is deze keuze herkenbaar of juist afwijkend voor jullie praktijk?]
+        - [Bijvoorbeeld: Hoe kunnen we deze keuze het beste borgen in de richtlijnen of design tokens?]
+
+  - type: textarea
+    id: handige-links
+    attributes:
+      label: "Handige links"
+      value: |
+        ## Handige links
+
+        - **Figma component:** [Link naar Figma]
+        - **Rijkshuisstijl website:** [Link naar betreffende pagina]
+        - **WCAG-richtlijnen (indien van toepassing):** [Bijv. Contrast – WCAG 1.4.3](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
+        - **Design tokens:** `[noem hier relevante tokens uit Token Studio]`
+        - ...
