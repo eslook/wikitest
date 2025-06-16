@@ -1,7 +1,7 @@
 title: "Rijkshuisstijl interpretatie "
 body:
   - type: textarea
-    id: keuzes-en-overwegingen
+    id: naam-onderdeel
     attributes:
       label: "Naam onderdeel"
       description: "Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes"
