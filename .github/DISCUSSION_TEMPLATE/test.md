@@ -1,5 +1,5 @@
 ---
-name: 💬 Nieuwe Component
+name: test
 about: Bespreek een nieuw componentvoorstel voor ontwikkeling in meerdere frameworks
 labels: ["component", "voorstel", "needs-design"]
 ---
