@@ -2,6 +2,7 @@ title: "Rijkshuisstijl interpretatie "
 body:
   - type: textarea
     id: one-textarea
+    label: verplicht
     attributes:
       value: |
         # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
