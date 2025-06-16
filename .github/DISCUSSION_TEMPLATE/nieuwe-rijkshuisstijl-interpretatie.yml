@@ -1,7 +1,7 @@
 name: "Rijkshuisstijl interpretatie name"
 title: "Rijkshuisstijl interpretatie "
 body:
-  - type: markdown
+  - type: textarea
     attributes:
       value: |
         # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
