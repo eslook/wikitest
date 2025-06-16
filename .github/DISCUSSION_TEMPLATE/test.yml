@@ -1,27 +1,37 @@
-title: "Rijkshuisstijl interpretatie"
+name: Rijkshuisstijl keuze
+description: Documenteer ontwerpkeuzes volgens de Rijkshuisstijl
+labels:
+  - rijkshuisstijl
 body:
   - type: input
     id: component_naam
     attributes:
-      label: "Naam van het onderdeel"
-      placeholder: "Bijv. Button"
+      label: Naam van onderdeel
+      description: Geef aan voor welk component of onderdeel deze keuzes gelden
+      placeholder: Bijv. Button, Inputveld, etc.
+
+  - type: textarea
+    id: keuzes_en_overwegingen
+    attributes:
+      label: Keuzes en overwegingen
+      description: Noteer hier ontwerpkeuzes, motivatie en onderbouwing (zoals WCAG, onderzoek, huisstijl).
+      placeholder: |
+        Voorbeeld:
+        **Kleurgebruik:** Donkerblauw (#003082) voor primaire knoppen. Dit voldoet aan contrastvereisten (WCAG AA).
 
   - type: markdown
     attributes:
       value: |
-        # {{component_naam}} – Rijkshuisstijl keuzes  
-        _Laatste update: {{today}}_  
+        ---
+        ## 📄 Voorvertoning
 
-        ## Keuzes en overwegingen
+        Gebruik onderstaande preview als Markdown in documentatie of overdracht:
 
-        <!---
-        Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
-        Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt. 
-        -->
-  - type: textarea
-    id: keuzes_overwegingen
-    attributes:
-      label: "Keuzes en overwegingen"
-      placeholder: |
-        Voorbeeld:
-        **Kleurgebruik:** Er is gekozen voor donkerblauw (#003082) omdat dit de primaire kleur uit de Rijkshuisstijl is en voldoende contrast biedt volgens WCAG AA.
+        ```markdown
+        ## {{component_naam}} – Rijkshuisstijl keuzes
+        Laatste update: {{date}}
+
+        ### Keuzes en overwegingen
+
+        {{keuzes_en_overwegingen}}
+        ```
