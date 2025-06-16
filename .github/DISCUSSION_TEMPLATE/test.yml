@@ -3,11 +3,10 @@ body:
   - type: textarea
     id: naam-onderdeel
     attributes:
-      label: "Naam onderdeel"
+      label: Naam onderdeel
       description: "Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes"
       value: |
         # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
-        _Laatste update: {datum, zoals: 14-4-2025}_
 
   - type: textarea
     id: keuzes-en-overwegingen
@@ -31,6 +30,7 @@ body:
       description: Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast?
       value: |
         ### Kleurgebruik
+
         <!-- Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast? -->
 
   - type: textarea
@@ -40,6 +40,7 @@ body:
       description: Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar?
       value: |
         ### Typografie
+
         <!-- Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar? -->
 
   - type: textarea
@@ -49,6 +50,7 @@ body:
       description: Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden?
       value: |
         ### Toegankelijkheid
+
         <!-- Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden? -->
 
   - type: textarea
@@ -58,6 +60,7 @@ body:
       description: Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl?
       value: |
         ### Interactie/gedrag
+
         <!-- Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl? -->
 
   - type: textarea
@@ -67,6 +70,7 @@ body:
       description: Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid?
       value: |
         ### Afgeronde hoeken
+
         <!-- Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid? -->
 
   - type: textarea
@@ -76,28 +80,29 @@ body:
       description: Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt?
       value: |
         ### Uitlijning en spacing
+
         <!-- Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt? -->
 
   - type: textarea
     id: overige-onderwerpen
     attributes:
-      label: "Overige onderwerpen"
+      label: Overige onderwerpen
       description: "Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc."
       value: |
-        <!---
-        Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc.
-        -->
+        <!--- Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc. -->
 
   - type: textarea
     id: vragen-of-discussiepunten
     attributes:
       label: "Vragen of discussiepunten"
-      value: |
-        ## Vragen of discussiepunten
-
+      description: |
         - [Bijvoorbeeld: Wat zijn ervaringen bij andere organisaties met deze component?]
         - [Bijvoorbeeld: Is deze keuze herkenbaar of juist afwijkend voor jullie praktijk?]
         - [Bijvoorbeeld: Hoe kunnen we deze keuze het beste borgen in de richtlijnen of design tokens?]
+      value: |
+        ## Vragen of discussiepunten
+
+        - ...
 
   - type: textarea
     id: handige-links
