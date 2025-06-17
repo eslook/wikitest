@@ -1,7 +1,7 @@
 ---
 name: test3 naam
 about: test3 about
-labels:
+category: test3
 ---
 
 # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
