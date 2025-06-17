@@ -1,3 +1,9 @@
+---
+name: test3 naam
+about: test3 about
+labels:
+---
+
 # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
 
 ## Keuzes en overwegingen
