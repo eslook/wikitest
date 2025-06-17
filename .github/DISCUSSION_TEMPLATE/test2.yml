@@ -3,7 +3,7 @@ body:
   - type: textarea
     id: one-textarea
     attributes:
-      label: verplicht
+      label: ' '
       value: |
         # {Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}
 
