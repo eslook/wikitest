@@ -16,8 +16,6 @@ body:
         Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
         Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt.
       value: |
-        ## Keuzes en overwegingen
-
         <!---
         Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
         Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt.
@@ -29,8 +27,6 @@ body:
       label: "Kleurgebruik"
       description: Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast?
       value: |
-        ### Kleurgebruik
-
         <!-- Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast? -->
 
   - type: textarea
@@ -39,8 +35,6 @@ body:
       label: "Typografie"
       description: Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar?
       value: |
-        ### Typografie
-
         <!-- Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar? -->
 
   - type: textarea
@@ -49,8 +43,6 @@ body:
       label: "Toegankelijkheid"
       description: Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden?
       value: |
-        ### Toegankelijkheid
-
         <!-- Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden? -->
 
   - type: textarea
@@ -59,8 +51,6 @@ body:
       label: "Interactie/gedrag"
       description: Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl?
       value: |
-        ### Interactie/gedrag
-
         <!-- Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl? -->
 
   - type: textarea
@@ -69,8 +59,6 @@ body:
       label: "Afgeronde hoeken"
       description: Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid?
       value: |
-        ### Afgeronde hoeken
-
         <!-- Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid? -->
 
   - type: textarea
@@ -79,8 +67,6 @@ body:
       label: "Uitlijning en spacing"
       description: Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt?
       value: |
-        ### Uitlijning en spacing
-
         <!-- Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt? -->
 
   - type: textarea
@@ -100,8 +86,6 @@ body:
         - [Bijvoorbeeld: Is deze keuze herkenbaar of juist afwijkend voor jullie praktijk?]
         - [Bijvoorbeeld: Hoe kunnen we deze keuze het beste borgen in de richtlijnen of design tokens?]
       value: |
-        ## Vragen of discussiepunten
-
         - ...
 
   - type: textarea
@@ -109,8 +93,6 @@ body:
     attributes:
       label: "Handige links"
       value: |
-        ## Handige links
-
         - **Figma component:** [Link naar Figma]
         - **Rijkshuisstijl website:** [Link naar betreffende pagina]
         - **WCAG-richtlijnen (indien van toepassing):** [Bijv. Contrast – WCAG 1.4.3](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
