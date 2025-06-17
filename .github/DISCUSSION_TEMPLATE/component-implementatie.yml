@@ -1,6 +1,4 @@
-name: Component implementatie
 title: '{Naam van de component}'
-about: Definieer en bespreek de specificaties en implementatiekeuzes van een nieuw component.
 body:
   - type: textarea
     id: component-implementatie
