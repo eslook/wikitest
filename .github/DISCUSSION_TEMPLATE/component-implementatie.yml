@@ -1,13 +1,13 @@
-title: "Component implementatie {Naam van de component}"
+title: "{Naam van de component}"
 body:
   - type: textarea
     id: component-implementatie
     attributes:
       label: Component implementatie
       value: |
-        _Voeg hier een visuele referentie toe, zodat in één oogopslag duidelijk is over welk component het gaat._
+        In deze discussie definiëren en bespreken we de specificaties en implementatiekeuzes van dit component. Het doel is om één consistente en reproduceerbare beschrijving te schrijven, waarmee elke developer onafhankelijk van programmeertaal of framework, hetzelfde component kan bouwen.
 
-        > In deze discussie definiëren en bespreken we de specificaties en implementatiekeuzes van dit component. Het doel is om één consistente en reproduceerbare beschrijving te schrijven, waarmee elke developer onafhankelijk van programmeertaal of framework, hetzelfde component kan bouwen.
+        _Voeg hier een visuele referentie toe, zodat in één oogopslag duidelijk is over welk component het gaat._
 
         ## Korte omschrijving
 
