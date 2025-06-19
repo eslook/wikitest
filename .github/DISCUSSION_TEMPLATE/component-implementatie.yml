@@ -1,4 +1,4 @@
-title: "Component implementatie "
+title: "Component implementatie {Naam van de component}"
 body:
   - type: textarea
     id: component-implementatie
