@@ -27,8 +27,8 @@ body:
         | Angular       | **Voorbeeld**: `<rhc-card-as-link />` |
         | Web Component | **Voorbeeld**: `<card-as-link />`     |
 
-        - Is dit component afgeleid van een NL Design System component? **Ja/Nee**
-        - Indien nee: **Licht toe waarom het afwijkt of niet bestaat binnen NLDS.**
+        - Bestaat dit component in het Estafettemodel van NL Design System? **Ja, [in deze component GitHub discussion](https://github.com/orgs/nl-design-system/discussions/categories/component-suggestions)/Nee**
+        - Indien nee: **Licht toe waarom het afwijkt of niet bestaat.**
 
         ## Eigenschappen
 
