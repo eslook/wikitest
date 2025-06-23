@@ -1,6 +1,8 @@
 body:
   - type: textarea
     id: vraag
+    validations:
+      required: true
     attributes:
       label: Vraag
       description: |
