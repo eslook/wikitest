@@ -1,0 +1,40 @@
+title: ""
+body:
+  - type: textarea
+    id: vraag
+    attributes:
+      label: Vraag
+      description: |
+        Beschrijf hier concreet je vraag. Voeg eventueel context toe zoals het component, gedrag, ontwerpbesluit of implementatieprobleem.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: |
+        Geef wat achtergrondinformatie die kan helpen bij het beantwoorden van de vraag. Denk aan:
+
+        - Waar in je project of organisatie gebruik je dit?
+        - Is er al iets geprobeerd?
+        - Zijn er relevante links (bijv. Storybook, ontwerp in Figma, bestaande implementatie)?
+
+  - type: textarea
+    id: wat-heb-je-al-geprobeerd
+    attributes:
+      label: Wat heb je al geprobeerd?
+      description: |
+        Leg uit wat je al hebt gedaan of onderzocht. Dit voorkomt dat mensen suggesties doen die je al hebt overwogen.
+
+  - type: textarea
+    id: wat-wil-je-bereiken
+    attributes:
+      label: Wat wil je bereiken?
+      description: |
+        Beschrijf wat je uiteindelijk wilt bereiken met je vraag. Wat is het gewenste eindresultaat?
+
+  - type: textarea
+    id: status-of-follow-up
+    attributes:
+      label: Status of follow-up
+      description: |
+        Houd hier bij of de vraag is beantwoord, of dat er nog iets openstaat.
