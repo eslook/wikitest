@@ -2,7 +2,7 @@ body:
   - type: textarea
     id: vraag
     attributes:
-      label: Wat wil je weten of bespreken?
+      label: Vraag
       description: "Beschrijf hier concreet je vraag. Denk aan: wie, wat, waar, wanneer, waarom en hoe."
     validations:
       required: true
