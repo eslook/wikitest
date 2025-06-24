@@ -1,12 +1,11 @@
 body:
   - type: textarea
     id: vraag
+    attributes:
+      label: Wat wil je weten of bespreken?
+      description: "Beschrijf hier concreet je vraag. Denk aan: wie, wat, waar, wanneer, waarom en hoe."
     validations:
       required: true
-    attributes:
-      label: Vraag
-      description: |
-        Beschrijf hier concreet je vraag. Voeg eventueel context toe zoals het component, gedrag, ontwerpbesluit of implementatieprobleem.
 
   - type: textarea
     id: context
@@ -16,26 +15,12 @@ body:
         Geef wat achtergrondinformatie die kan helpen bij het beantwoorden van de vraag. Denk aan:
 
         - Waar in je project of organisatie gebruik je dit?
-        - Is er al iets geprobeerd?
-        - Zijn er relevante links (bijv. Storybook, ontwerp in Figma, bestaande implementatie)?
+        - Zijn er relevante links (bijv. Storybook, ontwerp in Figma, bestaande implementatie, testomgeving)?
+        - Wat heb je al onderzocht of gedaan?  Dit voorkomt dat mensen suggesties doen die je al hebt overwogen.
+        - Moet er iets gereproduceerd worden? Geef dan aan welk device en browser je gebruikt, en welke stappen genomen moeten worden om het probleem te zien.
 
   - type: textarea
-    id: wat-heb-je-al-geprobeerd
+    id: status
     attributes:
-      label: Wat heb je al geprobeerd?
-      description: |
-        Leg uit wat je al hebt gedaan of onderzocht. Dit voorkomt dat mensen suggesties doen die je al hebt overwogen.
-
-  - type: textarea
-    id: wat-wil-je-bereiken
-    attributes:
-      label: Wat wil je bereiken?
-      description: |
-        Beschrijf wat je uiteindelijk wilt bereiken met je vraag. Wat is het gewenste eindresultaat?
-
-  - type: textarea
-    id: status-of-follow-up
-    attributes:
-      label: Status of follow-up
-      description: |
-        Houd hier bij of de vraag is beantwoord, of dat er nog iets openstaat.
+      label: Status of vervolg
+      description: Houd hier bij of de vraag is beantwoord, welke vervolgstappen genomen moeten worden of dat er nog iets openstaat.
