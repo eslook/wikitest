@@ -9,11 +9,24 @@ body:
 
         _Voeg hier een visuele referentie toe, zodat in één oogopslag duidelijk is over welk component het gaat._
 
+        ## Relevante links
+
+        _Voeg hier links toe naar relevante documentatie, discussies of issues die betrekking hebben op dit component. Dit helpt bij het centraliseren van informatie en het volgen van de voortgang._
+
+        - [NL Design System GitHub Component discussie](https://github.com/orgs/nl-design-system/discussions/305)
+        - [NL Design System GitHub Backlog](https://github.com/nl-design-system/backlog/issues/101)
+        - [Rijkshuisstijl Community GitHub sp Styling]()
+        - [Rijkshuisstijl Community - Community Components](https://github.com/orgs/nl-design-system/projects/69)
+
         ## Korte omschrijving
 
         _Beschrijf in één of twee zinnen wat dit component doet en waarvoor het bedoeld is._
 
         **Voorbeeld**: Korte sectie die als geheel een link is naar een gerelateerde pagina.
+
+        ## Basis per framework
+
+        _Beschrijf hier per framework welke basis gebruikt is voor de implementatie. Bijvoorbeeld dat je voor React gekozen hebt voor de Utrecht implementatie, en voor Angular gekozen hebt dezelfde zelf te schrijven._
 
         ## Naamgeving
 
@@ -27,8 +40,13 @@ body:
         | Angular       | **Voorbeeld**: `<rhc-card-as-link />` |
         | Web Component | **Voorbeeld**: `<card-as-link />`     |
 
-        - Bestaat dit component in het Estafettemodel van NL Design System? **Ja, [in deze component GitHub discussion](https://github.com/orgs/nl-design-system/discussions/categories/component-suggestions)/Nee**
-        - Indien nee: **Licht toe waarom het afwijkt of niet bestaat.**
+        ## Design tokens
+
+        _Beschrijf welke design tokens de component beschikbaar heeft vanuit Token Studio._
+
+        ## Gedrag
+
+        _Beschrijf het verwachte gedrag van het component in verschillende staten (hover, focus, active, disabled). Geef ook aan hoe het zich gedraagt bij toetsenbordnavigatie of responsieve weergave._
 
         ## Eigenschappen
 
@@ -43,22 +61,9 @@ body:
 
         > Voeg alle benodigde properties toe, inclusief types, defaults en of ze verplicht zijn.
 
-        ## Design tokens
-
-        _Beschrijf welke design tokens de component beschikbaar heeft vanuit Token Studio._
-
-        ## Gedrag
-
-        _Beschrijf het verwachte gedrag van het component in verschillende staten (hover, focus, active, disabled). Geef ook aan hoe het zich gedraagt bij toetsenbordnavigatie of responsieve weergave._
-
         ## Implementatie keuzes
 
         _Geef context bij technische of functionele keuzes. Benoem ook afwijkingen van standaarden of andere implementaties als die er zijn. Voeg hier onderwerpen aan toe indien van toepassing._
-
-        ### Basis
-
-        - Is dit component gebaseerd op een bestaand component van een organisatie? Welke en waarom?
-        - Of is dit een geheel nieuw component? Wat is de reden om het zelf te ontwikkelen?
 
         ### Afwijkingen
 
@@ -68,15 +73,3 @@ body:
         ## Vragen of discussiepunten
 
         _Noteer hier openstaande vragen of beslissingen die nog besproken moeten worden._
-
-        ## Relevante links
-
-        > Onderstaande links helpen bij oriëntatie en besluitvorming.
-
-        Bekijk dit component op het [Rijkshuisstijl Community - Community Components](https://github.com/orgs/nl-design-system/projects/69) board **[hier]**. Hier kan je vinden:
-
-        - Dit component op de NL Design System Backlog. Hier vind je meer informatie over de keuzes voor dit component binnen het Estafettemodel van het NL Design System.
-        - De organisatie prefix.
-        - De naam van de component.
-        - De status van de verschillende stappen in het Estafettemodel binnen het middels [de stappenplannen](https://nldesignsystem.nl/handboek/component-bijdragen/overzicht).
-        - Relevante links naar onder andere de Figma, NPM Package Registry, GitHub en Storybook.
