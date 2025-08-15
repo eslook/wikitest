@@ -11,6 +11,9 @@ jobs:
     permissions:
       issues: write
     steps:
+      # Adding an issue to projects requires authorization with the project scope. To authorize, run gh auth refresh -s project.
+      - name: Authenticate project
+        run: gh auth refresh -s project
       - name: Create issue
         run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
@@ -25,12 +28,14 @@ jobs:
           new_issue_url=$(gh issue create \
             --title "$TITLE" \
             --label "$LABELS" \
+            --project "$PROJECT" \
             --body "$BODY")
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           TITLE: Dependabot & security issues wegwerken
           LABELS: dependencies
+          PROJECT: Community Sprint - Rijkshuisstijl
           BODY: |
             ## TLDR
 
