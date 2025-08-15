@@ -2,20 +2,23 @@ name: Dependabot & security issues wegwerken
 on:
   workflow_dispatch:
   schedule:
-    - cron: 00 00 1,15 * *
+    - cron: "0 0 1,15 * *"
 
 jobs:
   create_issue:
-    name: Create issue
+    name: Create dependabot cleanup issue
     runs-on: ubuntu-latest
     permissions:
       issues: write
+      projects: write
     steps:
-      - name: Create issue
-        run: |
-          week_number=$(date +%V)
-          prefixed_title="[W${week_number}] - $TITLE"
+      - name: Get week number
+        id: week
+        run: echo "week_number=$(date +%V)" >> $GITHUB_OUTPUT
 
+      - name: Create issue
+        id: create
+        run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
             previous_issue_number=$(gh issue list \
               --label "$LABELS" \
@@ -25,18 +28,20 @@ jobs:
               gh issue close "$previous_issue_number"
             fi
           fi
+          prefixed_title="[Week ${WEEK}] ${TITLE}"
           new_issue_url=$(gh issue create \
             --title "$prefixed_title" \
             --label "$LABELS" \
             --body "$BODY")
+          echo "new_issue_url=$new_issue_url" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: Dependabot & security issues wegwerken
+          WEEK: ${{ steps.week.outputs.week_number }}
+          TITLE: Dependabot & security updates verwerken
           LABELS: dependencies
           BODY: |
             ## TLDR
-
             Elke sprint moeten we kijken of er nieuwe dependabot PR's open staan en kunnen we de packages in ons project handmatig updaten. Zodra de main dependabot PR gemerged is, sluit dependabot automatisch alle kleine PRs. Elke sprint word een nieuw persoon assigned aan deze taak. Afhankelijk van hoelang deze taak blijkt te duren, kan de werkwijze aangepast worden.
 
             ## Actiepunten
@@ -46,7 +51,64 @@ jobs:
             - [ ] Als er iets fout gaat dat niet opgevangen word door een test, dan een issue aanmaken om dit op te vangen met een nieuwe test.
 
             ## Acceptatiecriteria
+            - Alle Dependabot PR's zijn verwerkt of geüpdatet.
+            - Nieuwe issues voor vervolgstappen zijn aangemaakt en gelinkt.
 
-            - Dependabot PR's zijn gemerged.
-            - Issues zijn aangemaakt voor eventuele vervolgstappen naar aanleiding van updates.
-          CLOSE_PREVIOUS: true
+      - name: Link to parent issue
+        run: |
+          parent_issue_number=1087
+          new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}" | awk -F'/' '{print $NF}')
+          gh issue comment $parent_issue_number --body "- [ ] #$new_issue_number"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+
+      - name: Add to personal project current iteration
+        run: |
+          project_number=2  # <-- your project number from the URL
+          user="eslook"     # <-- your GitHub username
+
+          # 1. Get the issue node ID
+          issue_id=$(gh api graphql -f query='
+            query($owner:String!, $repo:String!, $number:Int!) {
+              repository(owner:$owner, name:$repo) {
+                issue(number:$number) {
+                  id
+                }
+              }
+            }' \
+            -f owner=${GITHUB_REPOSITORY%/*} \
+            -f repo=${GITHUB_REPOSITORY#*/} \
+            -F number=$(echo "${{ steps.create.outputs.issue_url }}" | awk -F'/' '{print $NF}') \
+            --jq '.data.repository.issue.id')
+
+          # 2. Get the projectV2 node ID for your personal project
+          project_id=$(gh api graphql -f query='
+            query($user:String!, $number:Int!) {
+              user(login:$user) {
+                projectV2(number:$number) {
+                  id
+                  fields(first:20) {
+                    nodes {
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }' \
+            -f user=$user \
+            -F number=$project_number \
+            --jq '.data.user.projectV2.id')
+
+          # 3. Add the issue to the project
+          gh api graphql -f query='
+            mutation($project:ID!, $item:ID!) {
+              addProjectV2ItemById(input: {projectId: $project, contentId: $item}) {
+                item { id }
+              }
+            }' \
+            -f project=$project_id \
+            -f item=$issue_id
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
