@@ -65,7 +65,7 @@ jobs:
 
       - name: Add to personal project
         run: |
-          new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}" | awk -F'/' '{print $NF}')
-          gh project item-add 2 --user eslook --issue $new_issue_number
+          new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}")
+          gh project item-add 2 --url $new_issue_number
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
