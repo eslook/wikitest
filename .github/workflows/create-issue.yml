@@ -53,6 +53,7 @@ jobs:
             ## Acceptatiecriteria
             - Alle Dependabot PR's zijn verwerkt of geüpdatet.
             - Nieuwe issues voor vervolgstappen zijn aangemaakt en gelinkt.
+          CLOSE_PREVIOUS: true
 
       - name: Link to parent issue
         run: |
@@ -65,8 +66,8 @@ jobs:
 
       - name: Add to personal project current iteration
         run: |
-          project_number=2
           user="eslook"
+          project_number=2
 
           # 1. Get the issue node ID
           issue_id=$(gh api graphql -f query='
@@ -79,14 +80,14 @@ jobs:
             }' \
             -f owner=${GITHUB_REPOSITORY%/*} \
             -f repo=${GITHUB_REPOSITORY#*/} \
-            -F number=$(echo "${{ steps.create.outputs.issue_url }}" | awk -F'/' '{print $NF}') \
+            -F number=$(echo "${{ steps.create.outputs.new_issue_url }}" | awk -F'/' '{print $NF}') \
             --jq '.data.repository.issue.id')
 
-          # 2. Get the projectV2 node ID for your personal project
-          project_id=$(gh api graphql -f query='
-            query($user:String!, $number:Int!) {
-              user(login:$user) {
-                projectV2(number:$project_number) {
+          # 2. Get the projectV2 node ID for your personal project (inline project_number as Int)
+          project_id=$(gh api graphql \
+            -f query="query {
+              user(login: \\\"$user\\\") {
+                projectV2(number: $project_number) {
                   id
                   fields(first:20) {
                     nodes {
@@ -96,8 +97,7 @@ jobs:
                   }
                 }
               }
-            }' \
-            -f user=$user \
+            }" \
             --jq '.data.user.projectV2.id')
 
           # 3. Add the issue to the project
