@@ -1,5 +1,6 @@
 name: Dependabot & security issues wegwerken
 on:
+  workflow_dispatch:
   schedule:
     - cron: 00 00 1,15 * *
 
