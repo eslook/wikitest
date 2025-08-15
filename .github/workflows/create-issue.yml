@@ -86,7 +86,7 @@ jobs:
           project_id=$(gh api graphql -f query='
             query($user:String!, $number:Int!) {
               user(login:$user) {
-                projectV2(number:$number) {
+                projectV2(number:$project_number) {
                   id
                   fields(first:20) {
                     nodes {
@@ -98,7 +98,6 @@ jobs:
               }
             }' \
             -f user=$user \
-            -F number=$project_number \
             --jq '.data.user.projectV2.id')
 
           # 3. Add the issue to the project
