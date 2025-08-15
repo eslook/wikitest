@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-      projects: write
+      contents: write
     steps:
       - name: Get week number
         id: week
