@@ -65,7 +65,8 @@ jobs:
 
       - name: Add to personal project
         run: |
+          project_id=$(gh project view "Community Sprint - Rijkshuisstijl" --json id -q ".id")
           new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}")
-          gh project item-add 2 --url $new_issue_number --owner eslook
+          gh project item-add "$project_id" --url $new_issue_number --owner eslook
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
