@@ -56,7 +56,7 @@ jobs:
 
       - name: Link to parent issue
         run: |
-          parent_issue_number=1087
+          parent_issue_number=36
           new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}" | awk -F'/' '{print $NF}')
           gh issue comment $parent_issue_number --body "- [ ] #$new_issue_number"
         env:
