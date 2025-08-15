@@ -66,6 +66,6 @@ jobs:
       - name: Add to personal project
         run: |
           new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}")
-          gh project item-add 2 --url $new_issue_number
+          gh project item-add 2 --url $new_issue_number --owner eslook
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
