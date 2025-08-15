@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Create issue
         run: |
+          week_number=$(date +%V)
+          prefixed_title="[W${week_number}] - $TITLE"
+
           if [[ $CLOSE_PREVIOUS == true ]]; then
             previous_issue_number=$(gh issue list \
               --label "$LABELS" \
@@ -23,13 +26,12 @@ jobs:
             fi
           fi
           new_issue_url=$(gh issue create \
-            --title "[$WEEK] $TITLE" \
+            --title "$prefixed_title" \
             --label "$LABELS" \
             --body "$BODY")
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          WEEK: ${{ date +'%W' }}
           TITLE: Dependabot & security issues wegwerken
           LABELS: dependencies
           BODY: |
