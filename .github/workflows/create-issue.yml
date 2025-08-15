@@ -63,73 +63,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
 
-      - name: Add to personal project current iteration
+      - name: Add to personal project
         run: |
-          user="eslook"
-          project_number=2
-
-          # 1. Get the issue node ID
-          issue_id=$(gh api graphql -f query='
-            query($owner:String!, $repo:String!, $number:Int!) {
-              repository(owner:$owner, name:$repo) {
-                issue(number:$number) {
-                  id
-                }
-              }
-            }' \
-            -f owner=${GITHUB_REPOSITORY%/*} \
-            -f repo=${GITHUB_REPOSITORY#*/} \
-            -F number=$(echo "${{ steps.create.outputs.new_issue_url }}" | awk -F'/' '{print $NF}') \
-            --jq '.data.repository.issue.id')
-
-          # 2. Get the projectV2 node ID and iteration field ID
-          read -r project_id iteration_field_id current_iteration_id <<<$(gh api graphql \
-            -f query='query {
-              user(login: "'$user'") {
-                projectV2(number: '$project_number') {
-                  id
-                  fields(first: 20) {
-                    nodes {
-                      ... on ProjectV2IterationField {
-                        id
-                        name
-                        configuration {
-                          iterations(first: 5) {
-                            nodes {
-                              id
-                              title
-                              isCurrent
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }' \
-            --jq '.data.user.projectV2 | .id, (.fields.nodes[] | select(.name=="Iteration") | .id), (.fields.nodes[] | select(.name=="Iteration") | .configuration.iterations.nodes[] | select(.isCurrent==true) | .id)')
-
-          # 3. Add the issue to the project
-          item_id=$(gh api graphql -f query='
-            mutation($project:ID!, $item:ID!) {
-              addProjectV2ItemById(input: {projectId: $project, contentId: $item}) {
-                item { id }
-              }
-            }' \
-            -f project=$project_id \
-            -f item=$issue_id \
-            --jq '.data.addProjectV2ItemById.item.id')
-
-          # 4. Set iteration to current iteration
-          gh api graphql -f query='
-            mutation($item:ID!, $field:ID!, $iteration:ID!) {
-              updateProjectV2ItemFieldValue(input: {itemId: $item, fieldId: $field, value: {iterationId: $iteration}}) {
-                projectV2Item { id }
-              }
-            }' \
-            -f item=$item_id \
-            -f field=$iteration_field_id \
-            -f iteration=$current_iteration_id
+          new_issue_number=$(echo "${{ steps.create.outputs.new_issue_url }}" | awk -F'/' '{print $NF}')
+          gh project item-add 2 --user eslook --issue $new_issue_number
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
