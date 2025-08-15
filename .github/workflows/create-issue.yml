@@ -1,0 +1,51 @@
+name: Dependabot & security issues wegwerken
+on:
+  schedule:
+    - cron: 00 00 1,15 * *
+
+jobs:
+  create_issue:
+    name: Create issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue
+        run: |
+          if [[ $CLOSE_PREVIOUS == true ]]; then
+            previous_issue_number=$(gh issue list \
+              --label "$LABELS" \
+              --json number \
+              --jq '.[0].number')
+            if [[ -n $previous_issue_number ]]; then
+              gh issue close "$previous_issue_number"
+            fi
+          fi
+          new_issue_url=$(gh issue create \
+            --title "$TITLE" \
+            --label "$LABELS" \
+            --project "$PROJECT" \
+            --body "$BODY")
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TITLE: Dependabot & security issues wegwerken
+          LABELS: dependencies
+          PARENT: https://github.com/nl-design-system/rijkshuisstijl-community/issues/1087
+          PROJECT: Community Sprint - Rijkshuisstijl
+          BODY: |
+            ## TLDR
+
+            Elke sprint moeten we kijken of er nieuwe dependabot PR's open staan en kunnen we de packages in ons project handmatig updaten. Zodra de main dependabot PR gemerged is, sluit dependabot automatisch alle kleine PRs. Elke sprint word een nieuw persoon assigned aan deze taak. Afhankelijk van hoelang deze taak blijkt te duren, kan de werkwijze aangepast worden.
+
+            ## Actiepunten
+
+            - [ ] Bij patch en minor versie updates, is dit een kwestie van ervoor zorgen dat de dependabot PR niet breekt.
+            - [ ] Bij major versie, controleren van de betreffende changelog, lokaal draaien, controleren of er iets fout gaat. Als de vervolgstappen veel tijd kosten, afstemmen met community of dit gedeeld kan worden.
+            - [ ] Als er iets fout gaat dat niet opgevangen word door een test, dan een issue aanmaken om dit op te vangen met een nieuwe test.
+
+            ## Acceptatiecriteria
+
+            - Dependabot PR's zijn gemerged.
+            - Issues zijn aangemaakt voor eventuele vervolgstappen naar aanleiding van updates.
+          CLOSE_PREVIOUS: true
