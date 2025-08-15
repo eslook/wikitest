@@ -65,8 +65,8 @@ jobs:
 
       - name: Add to personal project current iteration
         run: |
-          project_number=2  # <-- your project number from the URL
-          user="eslook"     # <-- your GitHub username
+          project_number=2
+          user="eslook"
 
           # 1. Get the issue node ID
           issue_id=$(gh api graphql -f query='
