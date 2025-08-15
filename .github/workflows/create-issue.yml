@@ -13,7 +13,9 @@ jobs:
     steps:
       # Adding an issue to projects requires authorization with the project scope. To authorize, run gh auth refresh -s project.
       - name: Authenticate project
-        run: gh auth refresh -s project -h github.com
+        run: |
+          gh auth login
+          gh auth refresh -s project -h github.com
       - name: Create issue
         run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
