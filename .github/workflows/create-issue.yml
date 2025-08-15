@@ -23,12 +23,13 @@ jobs:
             fi
           fi
           new_issue_url=$(gh issue create \
-            --title "$TITLE" \
+            --title "[$WEEK] $TITLE" \
             --label "$LABELS" \
             --body "$BODY")
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          WEEK: ${date +'%W'}
           TITLE: Dependabot & security issues wegwerken
           LABELS: dependencies
           BODY: |
