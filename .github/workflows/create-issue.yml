@@ -32,8 +32,6 @@ jobs:
           GH_REPO: ${{ github.repository }}
           TITLE: Dependabot & security issues wegwerken
           LABELS: dependencies
-          PARENT: https://github.com/nl-design-system/rijkshuisstijl-community/issues/1087
-          PROJECT: Community Sprint - Rijkshuisstijl
           BODY: |
             ## TLDR
 
