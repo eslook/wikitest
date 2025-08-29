@@ -1,92 +1,55 @@
-title: "{Naam onderdeel, zoals: Button - Rijkshuisstijl keuzes}"
+title: "{Naam van het onderdeel}"
 body:
   - type: textarea
-    id: keuzes-en-overwegingen
+    id: rijkshuisstijl-interpretatie
     attributes:
-      label: "Keuzes en overwegingen"
-      description: |
-        Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
-        Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt.
+      label: Rijkshuisstijl interpretatie
       value: |
-        <!---
-        Noteer hier per onderwerp welke ontwerpkeuze is gemaakt, waarom deze keuze is gemaakt, én op basis van welke informatie of bron (zoals onderzoek, huisstijl of WCAG-richtlijnen).
-        Gebruik de onderstaande structuur en voeg onderwerpen toe die relevant zijn, zoals kleurgebruik, focusstijl of afgeronde hoeken. Combineer de keuze, de reden en eventuele onderbouwing in één korte alinea per punt.
-        -->
+        In deze discussie verzamelen, bespreken en documenteren we de ontwerpkeuzes voor dit onderdeel binnen de nieuwe Rijkshuisstijl. Het doel is om meer uniformiteit te creëren tussen verschillende Rijksoverheidswebsites en gezamenlijk tot één ontwerp te komen. Zie de [overkoepelende richtlijnen](https://github.com/nl-design-system/rijkshuisstijl-community/discussions/1505) en denk gerust mee!
 
-  - type: textarea
-    id: kleurgebruik
-    attributes:
-      label: "Kleurgebruik"
-      description: Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast?
-      value: |
-        <!-- Welke kleur is gebruikt? Voldoet deze aan WCAG? Afwijking toegepast? -->
+        _Voeg hier een visuele referentie toe, zodat in één oogopslag duidelijk is over welk component, patroon, template of onderdeel het gaat._
 
-  - type: textarea
-    id: typografie
-    attributes:
-      label: "Typografie"
-      description: Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar?
-      value: |
-        <!-- Welke tekstgrootte is gekozen? Valt dit onder “grote tekst”? Is het schaalbaar? -->
+        ## Relevante links
 
-  - type: textarea
-    id: toegankelijkheid
-    attributes:
-      label: "Toegankelijkheid"
-      description: Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden?
-      value: |
-        <!-- Hoe is met contrast, focus, leesbaarheid etc. rekening gehouden? -->
+        _Voeg hier gerust extra handige links toe, of laat er één of meerdere weg als ze niet van toepassing zijn._
 
-  - type: textarea
-    id: interactie-gedrag
-    attributes:
-      label: "Interactie/gedrag"
-      description: Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl?
-      value: |
-        <!-- Wat gebeurt er bij hover/focus/active? Afwijkingen van huisstijl? -->
+        - [NL Design System GitHub - Component Discussion](https://github.com/orgs/nl-design-system/discussions/categories/component-suggestions)
+        - [NL Design System GitHub - Backlog](https://github.com/nl-design-system/backlog/issues/101)
+        - [Figma component](link-naar-figma)
+        - [Rijkshuisstijl richtlijnen](link-naar-richtlijnen)
 
-  - type: textarea
-    id: afgeronde-hoeken
-    attributes:
-      label: "Afgeronde hoeken"
-      description: Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid?
-      value: |
-        <!-- Wat is de border-radius (bijv. 4px, 8px)? Komt dit overeen met huisstijl of tokens? Waarom is voor deze vorm gekozen? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid? -->
+        ## Gevonden informatie
 
-  - type: textarea
-    id: uitlijning-en-spacing
-    attributes:
-      label: "Uitlijning en spacing"
-      description: Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt?
-      value: |
-        <!-- Welke paddings zijn gebruikt? Hoe is gekozen voor uitlijning (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn hier tokens voor gebruikt? -->
+        _Beschrijf welke informatie je hebt gevonden over dit onderdeel en link ernaar indien mogelijk._
 
-  - type: textarea
-    id: overige-onderwerpen
-    attributes:
-      label: Overige onderwerpen
-      description: "Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc."
-      value: |
-        <!--- Voeg hier gerust extra regels toe voor onderwerpen zoals: iconen, font-weight, padding etc. -->
+        ## Varianten of types
 
-  - type: textarea
-    id: vragen-of-discussiepunten
-    attributes:
-      label: "Vragen of discussiepunten"
-      description: |
-        - [Bijvoorbeeld: Wat zijn ervaringen bij andere organisaties met deze component?]
-        - [Bijvoorbeeld: Is deze keuze herkenbaar of juist afwijkend voor jullie praktijk?]
-        - [Bijvoorbeeld: Hoe kunnen we deze keuze het beste borgen in de richtlijnen of design tokens?]
-      value: |
-        - ...
+        _Leg vast welke keuze is gemaakt, waarom en op basis van welke bron (bijvoorbeeld onderzoek, huisstijl of WCAG). Laat dit onderwerp weg als het niet van toepassing is. Denk aan: welke varianten zijn er (bijvoorbeeld Primary Action, Secondary Action)? Welke types zijn er (bijvoorbeeld Success, Error, Warning)?_
 
-  - type: textarea
-    id: handige-links
-    attributes:
-      label: "Handige links"
-      value: |
-        - **Figma component:** [Link naar Figma]
-        - **Rijkshuisstijl website:** [Link naar betreffende pagina]
-        - **WCAG-richtlijnen (indien van toepassing):** [Bijv. Contrast – WCAG 1.4.3](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
-        - **Design tokens:** `[noem hier relevante tokens uit Token Studio]`
-        - ...
+        ## Kleur
+
+        _Leg vast welke keuze is gemaakt, waarom en op basis van welke bron. Laat dit onderwerp weg als het niet van toepassing is. Denk aan: welke kleur is gebruikt? Voldoet deze aan WCAG? Is er een afwijking toegepast?_
+
+        ## Typografie
+
+        _Leg vast welke keuze is gemaakt, waarom en op basis van welke bron. Laat dit onderwerp weg als het niet van toepassing is. Denk aan: welke font-size en font-weight zijn gekozen?_
+
+        ## Border
+
+        _Leg vast welke keuze is gemaakt, waarom en op basis van welke bron. Laat dit onderwerp weg als het niet van toepassing is. Denk aan: wat is de border-width of border-radius (bijvoorbeeld 4px, 8px)? Komt dit overeen met de huisstijl of tokens? Heeft het invloed op herkenbaarheid of gebruiksvriendelijkheid?_
+
+        ## Uitlijning en spacing
+
+        _Leg vast welke keuze is gemaakt, waarom en op basis van welke bron. Laat dit onderwerp weg als het niet van toepassing is. Denk aan: welke paddings zijn gebruikt? Hoe is de uitlijning bepaald (links, gecentreerd)? Wat is de visuele of functionele reden hiervoor? Zijn er tokens gebruikt?_
+
+        ## Styling van states
+
+        _Leg vast welke keuze is gemaakt, waarom en op basis van welke bron. Laat dit onderwerp weg als het niet van toepassing is. Denk aan: hoe ziet de styling eruit voor active, hover en focus-visible? Voldoet deze aan WCAG?_
+
+        ## {naam-onderwerp}
+
+        _Voeg hier gerust extra onderwerpen toe, zoals iconen, rounded-corner of andere details._
+
+        ## Vragen of discussiepunten
+
+        _Noteer hier openstaande vragen of beslissingen die nog besproken moeten worden._
